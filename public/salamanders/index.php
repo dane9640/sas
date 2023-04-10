@@ -30,7 +30,7 @@
           <td><?php echo h($salamander['description']) ?></td>
           <td><a href="<?php echo urlFor('/salamanders/show.php?id='.h(u($salamander['id']))); ?>">View</a></td>
           <td><a href="<?php echo urlFor('/salamanders/edit.php?id='.h(u($salamander['id']))); ?>">Edit</a></td>
-          <td><a href="#">Delete</a></td>
+          <td><a href="<?php echo urlFor('/salamanders/delete.php');?>">Delete</a></td>
     	  </tr>
       <?php
         }
