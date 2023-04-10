@@ -1,13 +1,12 @@
 <?php
-  require_once('../../private/initialize.php');
+  require_once("../../private/initialize.php");
 
-  if(isPostRequest()) {
-  
-    $salamanderName = $_POST['salamanderName'];
-  
-    echo "Form parameters<br />";
-    echo "Salamander Name: " . $salamanderName;
-  } else {
-    redirectTo(urlFor('/salamanders/new.php'));
-  }
-?>  
+  $pageTitle = "Salamanders | Add Salamander";
+
+  include(SHARED_PATH."/salamander-header.php");
+?>
+
+<h1>Add Salamander</h1>
+<p>Stub for create.php</p>
+
+<?php include(SHARED_PATH."/salamander-footer.php"); ?>
