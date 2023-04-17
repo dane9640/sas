@@ -6,6 +6,7 @@
   }
   $id = $_GET['id'];
 
+  $salamander = findSalamanderByID($id);
   
   if(isPostRequest()){
     $result = deleteSalamander($salamander);
@@ -15,8 +16,6 @@
       echo mysqli_error($db);
       dbDisconnect($db);
     }
-  } else {
-    $salamander = findSalamanderByID($id);
   }
 
   $pageTitle = "Salamanders | Delete";
@@ -35,7 +34,7 @@
 
     <form action="<?php echo urlFor('salamanders/delete.php?id=' . h(u($salamander['id']))); ?>" method="post">
       <div id="operations">
-        <input type="submit" name="commit" value="Delete salamander" />
+        <input type="submit" name="commit" value="Delete salamander">
       </div>
     </form>
   </div>
