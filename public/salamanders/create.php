@@ -1,12 +1,10 @@
 <?php
   require_once("../../private/initialize.php");
 
-  $pageTitle = "Salamanders | Add Salamander";
+  if(isPostRequest()){
+    $salamander = array('name'=>$_POST['salamanderName'],'habitat'=>$_POST['habitat'],'description'=>$_POST['description']);
 
-  include(SHARED_PATH."/salamander-header.php");
-?>
-
-<h1>Add Salamander</h1>
-<p>Stub for create.php</p>
-
-<?php include(SHARED_PATH."/salamander-footer.php"); ?>
+    $result = addSalamander($salamander);
+    $newID = mysqli_insert_id($db);
+    redirectTo(urlFor("salamanders/show.php?id=".$newID));
+  }

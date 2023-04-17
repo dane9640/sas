@@ -10,7 +10,7 @@
   <head>
     <title>SAS - <?php echo h($pageTitle); ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo urlFor('/stylesheets/salamanders.css'); ?>">
+    <link rel="stylesheet" media="all" href="<?php echo urlFor('stylesheets/salamanders.css'); ?>">
   </head>
 
   <body>
