@@ -24,6 +24,8 @@
   require_once('functions.php');
   require_once('database.php');
   require_once('query-functions.php');
+  require('validation-functions.php');
 
   $db = dbConnect();
+  $errors = [];
 ?>

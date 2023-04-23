@@ -1,7 +1,7 @@
 <?php
   // Insert your own credentials
   // Kept out for privacy concerns
-  // visit http://dangerdane.io/sas-phase3
+  // visit http://dangerdane.io/sas-phase5
   // to see the site in action!
   define("DB_SERVER", "");
   define("DB_USER", "");

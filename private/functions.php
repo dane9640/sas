@@ -42,4 +42,18 @@ function isGetRequest(){
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
+function displayErrors($errors=array()){
+  $output = '';
+
+  if(!empty($errors)){
+    $output .= "Please fix the following errors: ";
+    $output .= "<ul>";
+    foreach($errors as $error){
+      $output .= "<li>". h($error) ."</li>";
+    }
+    $output .= "</ul>";
+  }
+  return $output;
+}
+
 ?>

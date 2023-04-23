@@ -1,7 +1,17 @@
 <?php
   require_once("../../private/initialize.php");
 
-  $test = $_GET['test'] ?? '';
+  if(isPostRequest()){
+    $salamander = array('name'=>$_POST['salamanderName'],'habitat'=>$_POST['habitat'],'description'=>$_POST['description']);
+
+    $result = addSalamander($salamander);
+
+    if ($result === true){
+      redirectTo(urlFor("salamanders/show.php?id=".$newID));
+    } else {
+      $errors = $result;
+    }
+  }
 
   $pageTitle = "Salamanders | Add";
 
@@ -12,7 +22,8 @@
 
 <a href="<?php echo urlFor("salamanders/index.php");?>">Back to List</a>
 
-<form class="test" action="<?php echo urlFor("/salamanders/create.php");?>" method="post">
+<?php echo displayErrors($errors);?>
+<form class="test" action="<?php echo urlFor("/salamanders/new.php");?>" method="post">
   <label for="salamanderName">Salamander Name:</label>
   <input type="text" name="salamanderName" id="salamanderName">
 

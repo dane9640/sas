@@ -9,11 +9,10 @@
 
     $result = editSalamander($salamander);
 
-    if($result){
+    if($result === true){
       redirectTo(urlFor("salamanders/show.php?id=".$id));
     }else{
-      echo mysqli_error($db);
-      dbDisconnect($db);
+      $errors = $result;
     }
   } 
   else {
@@ -24,6 +23,7 @@
 ?>
 
 <h1>Edit Salamander</h1>
+<?php echo displayErrors($errors);?>
 <form action="<?php echo urlFor('/salamanders/edit.php?id='.h(u($id)));?>" method="post">
   <label for="name">Salamander Name</label>
   <input type="text" id="name" name="name" value="<?php
